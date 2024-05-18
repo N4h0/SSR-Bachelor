@@ -1,0 +1,140 @@
+/* Generell kode */
+/* Inspirasjon fra https://www.w3schools.com/css/css_navbar.asp og https://www.w3schools.com/css/css_dropdowns.asp */
+
+.left-aligned-items img {
+    width: 12.5rem;
+    height: 5.6rem;
+}
+
+/* NAVBAREN */
+.topnav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between; /* Fordeler elementene jevnt fra venstre til høyre */
+    overflow: hidden;
+}
+
+.topnav a {
+    text-decoration: none; /* Fjerner understreking av linker */
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0 0.6rem;
+}
+
+.topnav .icon {
+    display: none;
+    padding: 0.8rem 1rem;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.navTekst.active {
+    color: #4064d7;
+}
+/*Gjør at endre-språk-knappene fyller ut hele boksen*/
+.dropDownContent button {
+    display: block;
+    width: 100%;
+}
+
+.navLink {
+    width: 100%;
+}
+
+.navTekst {
+    padding: 0.8rem 1rem;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+/* Hover effekter */
+.navTekst:hover, .dropDownContent button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.right-aligned-items {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end; /* Justerer navigasjonselementene til høyre */
+}
+
+/* SPRÅK DELEN */
+.dropDownContent {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* Mer subtil skygge */
+    padding: 0.6rem 0; /* Justert padding for å fjerne vertikal padding */
+    right: 0; /*Gjør at den ikke overflower til høgre*/
+    left: auto;
+    z-index: 1;
+    border: none; /* Ingen ramme */
+}
+
+.dropDownContent button {
+    border: none; /* Ingen ramme på knapper */
+    background-color: transparent; /* Gjennomsiktig bakgrunn */
+    padding: 0.5rem 1rem; /* Justert padding */
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.dropDown:hover .dropDownContent {
+    display: block;
+}
+
+.dropDown img {
+    margin-right: 5px;
+}
+
+
+
+/* Media Queries */
+@media screen and (max-width: 1031px) {
+    .topnav, .topnav.responsive {
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    .right-aligned-items {
+        width: 100%
+    }
+    .navTekst.active {
+        padding-right: 35rem;
+    }
+
+        .right-aligned-items, .topnav .icon,
+        .topnav a.icon, .topnav .icon {
+            display: none;
+        }
+
+        .topnav a.icon, .topnav .icon {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 2.4rem;
+        }
+
+    .dropDownContent {
+        left: 0; /*Siden vi har right:0 når den er stor må vi endre til left her*/
+    }
+
+    .topnav.responsive .right-aligned-items, .topnav.responsive a {
+        display: block;
+        text-align: left;
+    }
+}

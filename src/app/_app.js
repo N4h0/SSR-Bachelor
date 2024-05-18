@@ -1,9 +1,11 @@
 import Layout from '../layout'
- 
-export default function MyApp({ Component, pageProps }) {
+import { appWithTranslation } from 'next-i18next';
+
+function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <Component {...pageProps} />
     </Layout>
-  )
+  );
 }
+export default appWithTranslation(MyApp);

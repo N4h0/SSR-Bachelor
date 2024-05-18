@@ -1,0 +1,87 @@
+
+
+/** Footer */
+.footer {
+    margin-top: auto; /* Feste footeren til bunn av siden */
+    background-color: #3a3a3a; /* Grå-ish bakgrunn */
+    color: #FFFFFF;
+}
+
+.footer_h1 {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+}
+
+.link {
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    padding: 0.6rem;
+}
+
+.ikon {
+    fill: #ffffff;
+}
+
+/* Top kontainer */
+.top-kontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.8rem;
+    padding: 4.3rem 0;
+}
+
+/* Kontakt seksjonen */
+.kontaktinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.kontaktinfo > div:not(:last-child) {
+    margin-bottom: 1.25rem; /* Avstand mellom tekst */
+}
+
+/* Copyright seksjonen */
+.copyright {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    border-top: 1px solid #7a7a7a;
+}
+
+.copyright_text {
+    font-size: 0.8rem;
+    margin-top: 0.6rem;
+}
+
+/** Responsivitet */
+@media (max-width: 560px) {
+    .top-kontainer, .copyright {
+        flex-direction: column;
+    }
+
+    .kontaktinfo, .copyright {
+        margin-left: 1.25rem;
+    }
+
+    .footer .link {
+        padding: 0.37rem;
+    }
+
+    .kontaktinfo {
+        width: 55%;
+    }
+}
+
+@media (max-width: 395px) {
+    .footer .link {
+        padding: 0.31rem;
+        font-size: 0.62rem;
+    }
+
+    .kontaktinfo {
+        width: 65%;
+    }
+}
