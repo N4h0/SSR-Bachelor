@@ -152,6 +152,7 @@
     line-height: 1.38;
     color: black; /*#2e475d*/;
     font-weight: bold;
+    text-align: center;
 }
 
 .connectMain {
@@ -247,6 +248,7 @@
     .heroContent {
         background-position: 70% center; /* Shows more of the right side */
     }
+ 
 }
 
 @media (max-width: 768px) {
