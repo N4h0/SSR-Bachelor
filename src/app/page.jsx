@@ -1,15 +1,10 @@
 //Dette er startsida
-"use client"
-import { useEffect } from "react";
+
+
 import Link from 'next/link';
-
 import styles from "./page.module.css";
+import Partnere from './components/Partnere'
 
-function scrollToTop() {
-  setTimeout(() => {
-    window.scrollTo(0, 0);
-  }, 10);
-}
 
 function Homepage() {
   return (
@@ -40,8 +35,8 @@ function Bildet() {
       <div className={styles.pictureText}>
         <h1 className={styles.pictureH1}>M&N REGNSKAP</h1>
         <h2 className={styles.pictureH2}>Vi tar vare på regnskapet ditt!</h2>
-        <Link to="/om-oss">
-          <button className={styles.pictureButton} onClick={scrollToTop}>
+        <Link href="/team">
+          <button className={styles.pictureButton}>
             Om oss
           </button>
         </Link>
@@ -53,30 +48,30 @@ function Bildet() {
 function Regnskap() {
   return (
     <>
-      <h2>Dine ambisjoner, vår ekspertise - Hvordan kan vi støtte deg?</h2>
+      <h2 className={styles.regnskapsSeksjonH2}>Dine ambisjoner, vår ekspertise - Hvordan kan vi støtte deg?</h2>
       <div className={styles.regnskapsBoks}>
-        <Link to="/tjenester" className={styles.regnskapsKort}>
+        <Link href="/tjenester" className={styles.regnskapsKort}>
           <img src="./HjemKort1.WebP" alt="" loading="lazy" />
           <h3 className={styles.regnskapsKortH3}>Regnskap</h3>
           <p className={styles.regnskapsKortP}>
             Løpende bokføring, årsoppgjør og Rapportering til Altinn.
           </p>
         </Link>
-        <Link to="/tjenester" className={styles.regnskapsKort}>
+        <Link href="/tjenester" className={styles.regnskapsKort}>
           <img src="./HjemKort2.WebP" alt="" loading="lazy" />
           <h3 className={styles.regnskapsKortH3}>Rådgivning</h3>
           <p className={styles.regnskapsKortP}>
             Få assistanse fra regnskapseksperter for å få mest mulig ut av tiden og pengene dine.
           </p>
         </Link>
-        <Link to="/tjenester" className={styles.regnskapsKort}>
+        <Link href="/tjenester" className={styles.regnskapsKort}>
           <img src="./HjemKort3.Webp" alt="" loading="lazy" />
           <h3 className={styles.regnskapsKortH3}>Lønn</h3>
           <p className={styles.regnskapsKortP}>
             Har du ansatte? Spar tid ved å la oss håndtere lønnsbehandling og rapportering til A-meldingen.
           </p>
         </Link>
-        <Link to="/tjenester" className={styles.regnskapsKort}>
+        <Link href="/tjenester" className={styles.regnskapsKort}>
           <img src="./HjemKort4.WebP" alt="" loading="lazy" />
           <h3 className={styles.regnskapsKortH3}>Skattemelding</h3>
           <p className={styles.regnskapsKortP}>
@@ -85,8 +80,8 @@ function Regnskap() {
         </Link>
       </div>
       <div className={styles.sisteContainer}>
-        <Link className={styles.regnskapsKnapp} to="/tjenester">
-          <span className={styles.regnskapsKnappTekst} onClick={scrollToTop}>
+        <Link href="/tjenester" className={styles.regnskapsKnapp}>
+          <span className={styles.regnskapsKnappTekst}>
             Mer Info
           </span>
         </Link>
@@ -95,112 +90,7 @@ function Regnskap() {
   );
 }
 
-function Partnere() {
-  useEffect(() => {
-    $(document).ready(function () {
-      $(".customer-logos").slick({
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 1500,
-        arrows: false,
-        dots: false,
-        pauseOnHover: false,
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 4,
-            },
-          },
-          {
-            breakpoint: 529,
-            settings: {
-              slidesToShow: 3,
-            },
-          },
-          {
-            breakpoint: 281,
-            settings: {
-              slidesToShow: 1, // Viser kun 1 logo for skjermer ≤ 281px
-            },
-          },
-        ],
-      });
-    });
-  }, []);
 
-  return (
-    <div className={styles.partnerBakgrunn}>
-      <h2 className={styles.partnerTittel}>Våre partnere</h2>
-      <section className={`${styles.customerLogos} ${styles.bilder}`}>
-        <div className={styles.bildet}>
-          <a
-            href="https://newdelhi.no/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="./NewDelhi.WebP" alt="New Delhi logo" />
-          </a>
-        </div>
-        <div className={styles.bildet}>
-          <a
-            href="https://www.masalapolitics.no/?gad_source=1&gclid=Cj0KCQjwiYOxBhC5ARIsAIvdH53-Z1aKvYmQJG_BJj_xwWEKJM8jl2dqkMNMPt34kACI5SlTFKfzaZsaAqGEEALw_wcB"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="./MasalaPolitics.WebP" alt="Masala Politics logo" />
-          </a>
-        </div>
-        <div className={styles.bildet}>
-          <a
-            href="https://snappys.net/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="./Snappys.WebP" alt="Snappys logo" />
-          </a>
-        </div>
-        <div className={styles.bildet}>
-          <a
-            href="https://bighorn.no/en/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="./BigHornSteak.WebP" alt="Big Horn Steak logo" />
-          </a>
-        </div>
-        <div className={styles.bildet}>
-          <a
-            href="https://takeitfrombaljit.no/?fbclid=IwAR0wmFMfXblrbUNLlzOqQuBBK7aAN1tls1UKwqCFQPeQRJ_au18rIvHFzA8_aem_Aa0LcFb5CLXNnyDEpiFm-pGGlM13nD5ImmACsHtxuoxRQj4wS7wPefXvN_QOw8xUlB3RD3l3JUsvc5v26yiKGp5O"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="./Baljit2.WebP" alt="Baljit2 logo" />
-          </a>
-        </div>
-        <div className={styles.bildet}>
-          <a
-            href="https://listentobaljit.no/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="./Baljit.WebP" alt="Baljit logo" />
-          </a>
-        </div>
-        <div className={styles.bildet}>
-          <a
-            href="https://www.carwash.no/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="./CarWash.WebP" alt="Car Wash logo" />
-          </a>
-        </div>
-      </section>
-    </div>
-  );
-}
 
 function Møtoss() {
   return (
@@ -243,8 +133,8 @@ function Kontakt() {
         <div className={styles.contactPicText}>
           <h1>Ønsker du å samarbeide med oss?</h1>
           <p>Konsentrer deg om det du er god på - Vi tar oss av regnskapet! Kontakt oss for en uforpliktende samtale.</p>
-          <Link to="/kontakt">
-            <button className={styles.kontaktKnapp} onClick={scrollToTop}>
+          <Link href="/contact">
+            <button className={styles.kontaktKnapp}>
               Kontakt oss
             </button>
           </Link>

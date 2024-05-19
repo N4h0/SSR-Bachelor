@@ -64,7 +64,7 @@
     color: #ffffff;
     width: 52%;
     padding: 6rem 1rem;
-    text-align: start;
+    text-align: flex-start; /* Replace start with flex-start */
 }
 
 /* ------------------ HØYRE KORT ------------------*/
@@ -183,8 +183,8 @@
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    justify-content: flex-start; /* Replace start with flex-start */
+    align-items: flex-start; /* Replace start with flex-start */
     background-color: #f6f9fc;
 }
 
@@ -195,7 +195,7 @@
 .detailItem {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    justify-content: flex-start; /* Replace start with flex-start */
 }
 
 .detailItem span {
