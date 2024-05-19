@@ -1,0 +1,196 @@
+
+/*OM OSS SEKSJONEN*/
+
+/* ------------------ HOVER FOR BEGGE KORTENE ------------------ */
+.aboutUs_box_hero_image,.aboutUs_box_hero_right  {
+    transition: background-color 0.3s ease;
+    border-radius: 0.62rem;
+    margin-right: 0.62rem;;
+    padding: 0.62rem;
+}
+.img_style {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-position: center;
+    object-fit: cover;
+    image-rendering: auto;
+}
+/* ------------------ BILDET BOKS ------------------ */
+.bilde_seksjon_img {
+    border-radius: 0.62rem;
+}
+
+/* ------------------ TEXT BOKS ------------------ */
+
+.aboutUs {
+    width: 100%;
+    margin-block: 5rem;
+}
+
+.aboutUs_box {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.aboutUs_box_hero {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+.aboutUs_box_hero_left {
+    transition: background-color 0.4s ease;
+    border-radius: 0.62rem;
+    margin-left: 0.62rem;
+    padding: 0.62rem;
+    margin-top: 2.5rem;
+}
+
+.aboutUs_title {
+     margin-top: 1.25rem;
+     font-size: 3rem;
+     line-height: .5;
+     font-weight: bolder;
+}
+
+ .aboutUs_text {
+     margin-top:1.8rem;
+     font-size: 1rem;
+     line-height: 1.7;
+     text-align: left;
+     padding: 0.62rem;
+}
+
+
+.bilde_seksjon_img {
+    border-radius: 0.62rem;
+}
+
+.aboutUs_box_hero.first {
+    grid-template-areas: "tekst bilde";
+ }
+
+.aboutUs_box_hero.second {
+    grid-template-areas: "bilde tekst";
+ }
+
+/*TEAM SEKSJONEN */
+
+.section_white {
+    background: #fff;
+    padding: 70px 0;
+}
+
+.section_title {
+    color: #212529;
+    font-weight: bolder;
+    font-size: 3rem;
+}
+
+.team_item {
+    color: #333; /* Mørkere for bedre kontrast mot lys bakgrunn */
+    text-align: left;
+    margin: 40px 0;
+    padding: 60px 20px 50px 20px;
+    border-radius: 8px;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+
+.team_item:hover {
+    background: rgb(161, 160, 160);;
+    color:  #000;
+}
+
+.team_item_heading {
+    margin: 1.25rem 0 0.063rem 0;
+    color: #454545;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    text-align:center
+}
+.team_item_title {
+    font-size: 1rem;
+    line-height: 1.75;
+    padding: 0.5rem;
+    text-align: center;
+}
+.section_subtitle {
+    white-space: pre-line;
+}
+
+.team_info {
+    display: block;
+    margin-bottom: 0;
+}
+
+
+.team_info::after {
+    background: rgb(161, 160, 160);
+    background: -webkit-linear-gradient(135deg, #6B02FF 0%, #985BEF 100%);
+    background: -o-linear-gradient(135deg, #6B02FF 0%, #985BEF 100%);
+    background: -moz-linear-gradient(135deg, #6B02FF 0%, #985BEF 100%);
+    background: linear-gradient(135deg, #6B02FF 0%, #985BEF 100%);
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    width: 50px;
+    height: 3px;
+    margin-top: -20px;
+}
+
+.team_img {
+    max-width: 12.5rem;
+    padding: 0.375rem 0.375rem;;
+    background-color: #dedede;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 0.62rem;
+}
+.text_center {
+    text-align: center !important;
+}
+
+@media (max-width:939px) {
+    .team_img {
+        max-width: 9.3rem;
+    }
+}
+
+@media (max-width:855px) {
+    .team_img {
+        max-width: 8.1rem;
+    }
+}
+
+@media screen and (max-width: 729px) {
+    .aboutUs_box_hero_left h1 {
+        font-size: 2.5rem;
+    }
+
+    .aboutUs_box_hero {
+        gap: 2.3rem;
+    }
+
+    .team_img {
+        max-width: 15.6rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .aboutUs_box_hero.first, .aboutUs_box_hero.second {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "tekst"
+            "bilde";
+    }
+}

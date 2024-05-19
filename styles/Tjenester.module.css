@@ -1,0 +1,189 @@
+/* Container for whole layout */
+/*background: linear-gradient(to bottom, #dccfcb, #fff);*/
+.helContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    flex-direction: row; /* Standard innstilling for større skjermer */
+    background: linear-gradient(to bottom, #dddddd, #fff);
+    padding: 0.8rem;
+    margin: 20px;
+}
+
+.kortInnhold {
+    margin: 0.6rem;
+}
+
+.kortInnhold p, .kortInnhold h2 {
+    text-align: left;
+}
+
+.kortInnhold h2 {
+    font-weight: bolder;
+}
+
+/* Main container for all cards */
+.alleKort {
+    display: flex;
+    flex-direction: column;
+    padding: 0.8rem;
+    gap: 1.25rem; /* Space between cards */
+    margin: 20px;
+    background: linear-gradient(to top, #dddddd, #fff);
+}
+
+/* Left container and image */
+.helVenstre {
+    flex: 1;
+    padding: 1.25rem;
+}
+
+.MoosaTjenesterBilde {
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+.HaseebTjenesterBilde {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Haseebs picture Responsiv */
+
+@media (min-width: 768px) and (max-width: 1024px) and (min-height: 600px) {
+    .førsteAndre {
+        max-width: 50%; 
+        height: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (min-height: 768px) and (max-height: 1200px) {
+    .førsteAndre {
+        max-width: 80%; 
+        height: auto;
+    }
+}
+
+@media (min-width: 1025px) {
+    .førsteAndre {
+        max-width: 50%;
+        height: auto;
+    }
+}
+
+/* Right container */
+.helHøyre {
+    flex: 1;
+    text-align: left;
+    padding: 1.25rem;
+}
+
+.helHøyre h1 {
+    margin-bottom: 1.25rem;
+    font-weight: bolder;
+    text-align: left;
+}
+
+.helHøyre p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Styling for each card */
+.førsteKort, .andrekort, .tredjeKort, .fjerdeKort {
+    width: 100%; /* Full width */
+    max-width: 1400px; /* Maximum width */
+    height: auto; /* Auto height based on content */
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Paragraph style within cards */
+.førsteKort p, .andreKort p, .tredjeKort p, .fjerdeKort p {
+    margin-top: 1rem;
+    font-size: 1.05rem;
+}
+
+/* Specific styles for first box (text and image side by side) */
+.førsteBoks {
+    display: flex;
+    gap: 1.25rem;
+}
+
+/* Specific styles for other boxes (text below image) */
+.andreBoks, .tredjeBoks, .fjerdeBoks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+
+@media (max-width:855px) {
+    .tredjeKort {
+        flex-direction: column;
+    }
+    .helContainer {
+        flex-direction: column;
+    }
+
+    .helHøyre {
+        order: 1;  /* Tekstseksjonen kommer først */
+    }
+
+    .helVenstre {
+        order: 2;  /* Bilde kommer etter tekstseksjonen */
+    }
+
+
+        .tredjeKort {
+            flex-direction: column;
+        }
+    
+        .helContainer {
+            flex-direction: column;
+        }
+    
+        .helVenstre, .helHøyre {
+            width: 100%;
+        }
+    
+        .alleKort {
+            padding: 0; /* Remove padding to avoid horizontal overflow */
+        }
+    
+        .førsteBoks,
+        .andreBoks,
+        .tredjeBoks,
+        .fjerdeBoks {
+            width: 100%; /* Full width for all boxes */
+        }
+    
+        .førsteBoks,
+        .fjerdeBoks {
+            margin-left: 0; /* Remove margin for boxes at the edges */
+            margin-right: 0;
+        }
+    }
+    
+    @media (max-width: 300px) {
+        .alleKort {
+            padding: 0; /* Remove padding to avoid horizontal overflow */
+        }
+    
+        .førsteBoks,
+        .andreBoks,
+        .tredjeBoks,
+        .fjerdeBoks {
+            width: 100%; /* Full width for all boxes */
+            margin-left: 0; /* Remove margin for boxes at the edges */
+            margin-right: 0;
+        }
+    }
+    

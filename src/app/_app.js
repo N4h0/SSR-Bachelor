@@ -1,4 +1,6 @@
 import Layout from '../layout'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { appWithTranslation } from 'next-i18next';
 
 function MyApp({ Component, pageProps }) {
