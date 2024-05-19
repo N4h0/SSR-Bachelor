@@ -23,7 +23,7 @@
 }
 
 /* Top kontainer */
-.top-kontainer {
+.topKontainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -58,7 +58,7 @@
 
 /** Responsivitet */
 @media (max-width: 560px) {
-    .top-kontainer, .copyright {
+    .topKontainer, .copyright {
         flex-direction: column;
     }
 

@@ -1,50 +1,52 @@
-"use client"
-import { useState, useContext } from 'react';
+"use client";
+import { useState, useContext } from "react";
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBars,
+  faChevronUp,
+  faChevronDown,
+} from "@fortawesome/free-solid-svg-icons";
 
-import styles from './NavBar.module.css'; // Correct CSS module import
+import styles from "../../../styles/NavBar.module.css"; // Correct CSS module import
 
 const NavBar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-    const closeMenu = () => setIsMenuOpen(false);
-   
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
-    return (
-        <div className={`${styles.topnav} ${isMenuOpen ? styles.responsive : ''}`}>
-            <div className={styles.leftAlignedItems}>
-                <Link href="../Hjem">
-                    <img src="../FirmaLogo.WebP" alt="M&N Regnskap Logo" />
-                </Link>
-            </div>
+  return (
+    <div className={`${styles.topnav} ${isMenuOpen ? styles.responsive : ""}`}>
+      <div className={styles.leftAlignedItems}>
+        <Link href="../Hjem">
+          <img className={styles.nav_img} src="../FirmaLogo.WebP" alt="M&N Regnskap Logo" />
+        </Link>
+      </div>
 
-            <div className={styles.rightAlignedItems}>
-                <Link href="../Hjem" onClick={closeMenu}>
-                    <span className={styles.navTekst}>Hjem</span>
-                </Link>
-                <Link href="../om-oss" onClick={closeMenu}>
-                    <span className={styles.navTekst}>Om oss</span>
-                </Link>
-                <Link href="../tjenester" onClick={closeMenu}>
-                    <span className={styles.navTekst}>Tjenester</span>
-                </Link>
-                <Link href="../frister" onClick={closeMenu}>
-                    <span className={styles.navTekst}>Nyttig informasjon</span>
-                </Link>
-                <Link href="../kontakt" onClick={closeMenu}>
-                    <span className={styles.navTekst}>Kontakt oss</span>
-                </Link>
-                
-            </div>
+      <div className={styles.rightAlignedIitems}>
+    <Link href="/link" legacyBehavior onClick={closeMenu}>
+      <a className={styles.navTekst}>Hjem</a>
+    </Link>
+    <Link href="/team" legacyBehavior onClick={closeMenu}>
+      <a className={styles.navTekst}>Om oss</a>
+    </Link>
+    <Link href="/tjenester" legacyBehavior onClick={closeMenu}>
+      <a className={styles.navTekst}>Tjenester</a>
+    </Link>
+    <Link href="/informasjon" legacyBehavior onClick={closeMenu}>
+      <a className={styles.navTekst}>Nyttig informasjon</a>
+    </Link>
+    <Link href="/contact" legacyBehavior onClick={closeMenu}>
+      <a className={styles.navTekst}>Kontakt oss</a>
+    </Link>
+  </div>
 
-            <button className={styles.icon} onClick={toggleMenu}>
-                <FontAwesomeIcon icon={faBars} />
-            </button>
-        </div>
-    );
+      <button className={styles.icon} onClick={toggleMenu}>
+        <FontAwesomeIcon icon={faBars} />
+      </button>
+    </div>
+  );
 };
 
 export default NavBar;

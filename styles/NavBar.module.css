@@ -1,7 +1,7 @@
 /* Generell kode */
 /* Inspirasjon fra https://www.w3schools.com/css/css_navbar.asp og https://www.w3schools.com/css/css_dropdowns.asp */
 
-.left-aligned-items img {
+.nav_img {
     width: 12.5rem;
     height: 5.6rem;
 }
@@ -62,7 +62,7 @@
     color: black;
 }
 
-.right-aligned-items {
+.rightAlignedIitems {
     display: flex;
     flex-grow: 1;
     justify-content: flex-end; /* Justerer navigasjonselementene til høyre */
@@ -110,14 +110,14 @@
 
     }
 
-    .right-aligned-items {
+    .rightAlignedIitems {
         width: 100%
     }
     .navTekst.active {
         padding-right: 35rem;
     }
 
-        .right-aligned-items, .topnav .icon,
+        .rightAlignedIitems, .topnav .icon,
         .topnav a.icon, .topnav .icon {
             display: none;
         }
@@ -133,7 +133,7 @@
         left: 0; /*Siden vi har right:0 når den er stor må vi endre til left her*/
     }
 
-    .topnav.responsive .right-aligned-items, .topnav.responsive a {
+    .topnav.responsive .rightAlignedIitems, .topnav.responsive a {
         display: block;
         text-align: left;
     }
