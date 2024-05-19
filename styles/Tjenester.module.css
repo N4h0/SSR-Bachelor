@@ -18,9 +18,17 @@
 .kortInnhold p, .kortInnhold h2 {
     text-align: left;
 }
+.kortInnhold p{
+    margin-top: 1rem;
+    font-size: 1.05rem;
+}
 
 .kortInnhold h2 {
     font-weight: bolder;
+    font-size: 2rem;
+}
+.tjenesterTittel{
+    font-size: 2.5rem;
 }
 
 /* Main container for all cards */

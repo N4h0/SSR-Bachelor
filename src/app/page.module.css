@@ -131,10 +131,6 @@
 }
 
 /* TEKSTEN I KORTENE OG HOVER */
-.regnskapsKortP {
-  font-size: .87rem;
-    margin-bottom: 1rem;
-}
 
 .regnskapsKort:hover {
   transform: scale(1.1);

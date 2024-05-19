@@ -32,12 +32,14 @@
 .aboutUs_box {
     width: 80%;
     margin: 0 auto;
+    
 }
 
 .aboutUs_box_hero {
     display: grid;
     grid-template-columns: 1.5fr 2fr;
     align-items: center;
+    text-align: center;
     gap: 3rem;
 }
 
@@ -88,6 +90,7 @@
     color: #212529;
     font-weight: bolder;
     font-size: 3rem;
+    text-align: center;
 }
 
 .team_item {
@@ -123,6 +126,10 @@
     line-height: 1.75;
     padding: 0.5rem;
     text-align: center;
+}
+.team_info_text{
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 .section_subtitle {
     white-space: pre-line;

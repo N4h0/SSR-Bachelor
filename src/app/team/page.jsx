@@ -13,7 +13,7 @@ function Team() {
 function Test() {
   return (
     <>
-      <div className={styles.aboutUsBox}>
+      <div className={styles.aboutUs_box}>
         <div className={`${styles.aboutUs_box_hero} ${styles.first}`}>
           <div className={styles.aboutUs_box_hero_text} style={{ gridArea: "tekst" }}>
             <h1 className={styles.aboutUs_title}>Vår historie</h1>

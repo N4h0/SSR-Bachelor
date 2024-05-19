@@ -1,6 +1,7 @@
 import Layout from '../layout'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./globals.css";
+import '../styles/globals.css';
+
 
 import { appWithTranslation } from 'next-i18next';
 
