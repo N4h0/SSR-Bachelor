@@ -1,0 +1,275 @@
+/* Chat-knapp når chatten er lukket */
+.Chat {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    background: #fff;
+    border-radius: 70%;
+    z-index: 999;
+}
+
+.chatButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Styling når chatten er åpen */
+.chatDialog {
+    background-color: #fff;
+    width: 21.75rem;
+    border-radius: 0.62rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 585px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+/* Chat-header */
+.chatHeader {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1.5px solid #e6e6e6;
+}
+
+.chatLogo {
+    height: 4.3rem;
+}
+
+.chatHeaderText {
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    font-size: 0.8rem;
+}
+
+.chatHeaderOverskrift {
+    font-size: 1.18rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.closeChat {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    color: black;
+    cursor: pointer;
+    padding-right: 0.62rem;
+}
+
+/* Chat-body */
+.chatBody {
+    display: flex;
+    flex-direction: column;
+    padding: 0.9rem;
+    height: 29rem;
+    overflow-y: auto;
+    margin: 0 auto;
+    background: #f7f7f7;
+    position: relative;
+}
+
+.chatTopMessage {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    font-size: 0.7rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.chatMessage, .botMessage {
+    margin-bottom: 5px;
+    padding: 0.5rem 0.6rem;
+    max-width: 65%;
+    box-shadow: 0 0 32px rgb(0 0 0 / 8%), 0rem 16px 16px -16px rgb(0 0 0 / 10%);
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.chatMessage {
+    background-color: #333;
+    color: #fff;
+    border-radius: 1.125rem 1.125rem 0 1.125rem;
+    align-self: flex-end;
+}
+
+.botMessage {
+    background-color: #fff;
+    color: #333;
+    border-radius: 1.125rem 1.125rem 1.125rem 0;
+    align-self: flex-start;
+    padding-left: 0;
+    position: relative;
+}
+
+.messageContent {
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+    padding: 0.2rem 0.5rem;
+}
+
+.messageTime {
+    font-size: 0.6rem;
+    color: #95a1ac;
+    padding: 0 0.625rem;
+    font-weight: bold;
+}
+
+/* Chat-footer */
+.chatFooter {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.6rem;
+    
+    border-top: 1px solid #eee;
+}
+
+.messageInput {
+    flex: 1;
+    padding: 0.4rem 15px;
+    margin-bottom: 0.4rem;
+    border: 1px solid #e6e6e6;
+    border-radius: 0.9rem 0 0 0.9rem;
+    margin-right: 0.6rem;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    width: calc(100% - 58px);
+    height: 2.8rem;
+}
+
+.sendMessage {
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    margin-right: 0.9rem;
+    background-color: #eee;
+}
+
+/* Stil for popup-container */
+.popupContainer {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #ffffff;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 9px;
+    max-width: 250px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.popupBox h2 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    font-weight: 500;
+    margin-top: 0;
+
+}
+
+.popupBox p {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+.popupBox button {
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    padding: 3px 8px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.popupBox button:hover {
+    background-color: gray;
+}
+
+.closeButton {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.5rem;
+}
+
+.messageContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.userContainer {
+    justify-content: flex-end; /* bruker melding til høyre */
+}
+
+.botContainer {
+    justify-content: flex-start; /* bot melding til venster */
+}
+
+.suggestionContainer {
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.suggestionBubble {
+    width: 100%;
+    background-color: #fff;
+    color: #333;
+    border-radius: 15px;
+    padding: 8px 16px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.suggestionButton {
+    background: none;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.botIcon {
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .chatDialog {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+    }
+
+    .chatBody {
+        overflow-y: auto;
+        height: calc(100vh - 140px);
+    }
+}

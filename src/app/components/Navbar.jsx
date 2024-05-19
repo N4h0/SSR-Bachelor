@@ -25,20 +25,20 @@ const NavBar = () => {
       </div>
 
       <div className={styles.rightAlignedIitems}>
-    <Link href="/" legacyBehavior onClick={closeMenu}>
-      <a className={styles.navTekst}>Hjem</a>
+    <Link legacyBehavior  href="/" >
+      <a className={styles.navTekst} onClick={closeMenu}>Hjem</a>
     </Link>
-    <Link href="/team" legacyBehavior onClick={closeMenu}>
-      <a className={styles.navTekst}>Om oss</a>
+    <Link legacyBehavior  href="/team"  >
+      <a className={styles.navTekst} onClick={closeMenu}>Om oss</a>
     </Link>
-    <Link href="/tjenester" legacyBehavior onClick={closeMenu}>
-      <a className={styles.navTekst}>Tjenester</a>
+    <Link legacyBehavior href="/tjenester" >
+      <a className={styles.navTekst} onClick={closeMenu}>Tjenester</a>
     </Link>
-    <Link href="/informasjon" legacyBehavior onClick={closeMenu}>
-      <a className={styles.navTekst}>Nyttig informasjon</a>
+    <Link legacyBehavior href="/informasjon"  >
+      <a className={styles.navTekst} onClick={closeMenu}>Nyttig informasjon</a>
     </Link>
-    <Link href="/contact" legacyBehavior onClick={closeMenu}>
-      <a className={styles.navTekst}>Kontakt oss</a>
+    <Link legacyBehavior href="/contact"  >
+      <a className={styles.navTekst} onClick={closeMenu}>Kontakt oss</a>
     </Link>
   </div>
 

@@ -1,10 +1,6 @@
-//Dette er startsida
-
-
 import Link from 'next/link';
 import styles from "./page.module.css";
-import Partnere from './components/Partnere'
-
+import Partnere from './components/Partnere';
 
 function Homepage() {
   return (
@@ -89,8 +85,6 @@ function Regnskap() {
     </>
   );
 }
-
-
 
 function Møtoss() {
   return (
