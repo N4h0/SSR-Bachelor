@@ -1,40 +1,42 @@
+import { useTranslations } from 'next-intl';
 import styles from '../../../styles/Footer.module.css';
 
 function Footer() {
+  const t = useTranslations('Footer');
   return (
     <footer className={styles.footer}>
       <div className={styles.topKontainer}>
         <div>
-          <Godkjenn />
+          <Godkjenn t={t} />
         </div>
         <div>
-          <ContactInfo />
+          <ContactInfo t={t} />
         </div>
       </div>
       <div>
-        <Copyright />
+        <Copyright t={t} />
       </div>
     </footer>
   );
 }
 
-const Godkjenn = () => (
+const Godkjenn = ({ t }) => (
   <div className={styles.kontaktinfo}>
-    <h1 className={styles.footer_h1}>Godkjenninger</h1>
+    <h1 className={styles.footer_h1}>{t('approvals')}</h1>
     <div>
       <img
         width="290"
         height="145"
-        src="./FooterLogo2.WebP"
-        alt="logo til medlem av norge "
+        src="../FooterLogo2.WebP"
+        alt={t('approvalLogoAlt')}
       />
     </div>
   </div>
 );
 
-const ContactInfo = () => (
+const ContactInfo = ({ t }) => (
   <div className={styles.kontaktinfo}>
-    <h1 className={styles.footer_h1}>Ta Kontakt</h1>
+    <h1 className={styles.footer_h1}>{t('contactUs')}</h1>
     <div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -74,10 +76,10 @@ const ContactInfo = () => (
   </div>
 );
 
-const Copyright = () => (
+const Copyright = ({ t }) => (
   <div className={styles.copyright}>
     <p className={styles.copyright_text}>
-      {new Date().getFullYear()}. M&N Regnskap. All rights reserved.
+      {new Date().getFullYear()}. M&N Regnskap. {t('allRightsReserved')}
     </p>
   </div>
 );

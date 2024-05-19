@@ -1,5 +1,5 @@
 import styles from '../../../styles/Contact.module.css';
-import EmailForm from '../../../src/app/components/EmailForm';
+import EmailForm from '../../../../src/app/[locale]/components/EmailForm';
 
 function Contact() {
   return (
@@ -19,7 +19,7 @@ function Contact() {
           <div className={styles.mainWrapper}>
             <div className={styles.supports}>
               <div className={`${styles.supportCard} ${styles.first}`}>
-                <img src="./KontaktOss1.WebP" className={styles.supportCardImage} />
+                <img src="../../KontaktOss1.WebP" className={styles.supportCardImage} />
                 <h2 className={styles.supportCardH2}>Snakk med oss</h2>
                 <span>Din tilbakemelding er viktig for oss. Vi er klare til å lytte og finne løsninger sammen.</span>
                 <a className={styles.supportCardA} href="tel:+004740056898">+0047 40 05 68 98</a>
@@ -27,7 +27,7 @@ function Contact() {
                 <span>.. trenger man litt hjelp fra venner... eller MN Regnskap support. Ikke overtenk... vi er her for deg.</span>
               </div>
               <div className={`${styles.supportCard} ${styles.second}`}>
-                <img src="./KontaktOss2.WebP" className={styles.supportCardImage} alt="Melding" />
+                <img src="../../KontaktOss2.WebP" className={styles.supportCardImage} alt="Melding" />
                 <h2 className={styles.supportCardH2}>Be om konsultasjon</h2>
                 <span>Konsentrer deg om det du er god på – Vi tar oss av regnskapet! Ta kontakt med oss for en uforpliktende samtale.</span>
                 <EmailForm />

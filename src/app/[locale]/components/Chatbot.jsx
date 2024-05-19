@@ -3,8 +3,10 @@ import React, { useEffect, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faPaperPlane, faRobot } from "@fortawesome/free-solid-svg-icons";
 import styles from "../../../styles/Chatbot.module.css";
+import { useTranslations } from 'next-intl';
 
 function Chatbot() {
+    const t = useTranslations('Chatbot');
     const chatBodyRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([]);
@@ -24,7 +26,7 @@ function Chatbot() {
     useEffect(() => {
         const WELCOME_MESSAGE = {
             type: "bot",
-            content: "Hei der 👋! Velkommen til siden. Gi meg beskjed dersom du har noen spørsmål.",
+            content: <p>{t('welcome_message')}</p>,
             time: new Date().toLocaleTimeString("nb-NO", {
                 hour: "2-digit",
                 minute: "2-digit",
@@ -59,8 +61,8 @@ function Chatbot() {
                         <button className={styles.closeButton} onClick={closePopup}>
                             <FontAwesomeIcon icon={faTimes} style={{ color: "black", float: "right" }} />
                         </button>
-                        <h2>Velkommen til vår chatbot!</h2>
-                        <p>Vi er her for å hjelpe deg. Spør oss gjerne om hva som helst!</p>
+                        <h2>{t('popup_title')}</h2>
+                        <p>{t('popup_message')}</p>
                     </div>
                 </div>
             )}
@@ -92,8 +94,8 @@ function ChatHeader({ onClose }) {
         <div className={styles.chatHeader}>
             <img src="/mn-regnskap-logo.webp" alt="Logo" className={styles.chatLogo} />
             <div className={styles.chatHeaderText}>
-                <h6 className={styles.chatHeaderOverskrift}>Chat med oss!</h6>
-                <span>Vi svarer så fort vi kan.</span>
+                <h6 className={styles.chatHeaderOverskrift}>{t('chat_with_us')}</h6>
+                <span>{t('we_will_reply')}</span>
             </div>
             <button className={styles.closeChat} onClick={onClose}>
                 <FontAwesomeIcon icon={faTimes} />
@@ -225,7 +227,7 @@ function ChatFooter({ onSend, setShowSuggestions }) {
             <input
                 type="text"
                 className={styles.messageInput}
-                placeholder="Skriv inn meldingen din ..."
+                placeholder={t('input_placeholder')}
                 value={message}
                 onChange={handleInputChange}
                 onKeyDown={handleKeyPress}
