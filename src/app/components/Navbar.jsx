@@ -19,13 +19,13 @@ const NavBar = () => {
   return (
     <div className={`${styles.topnav} ${isMenuOpen ? styles.responsive : ""}`}>
       <div className={styles.leftAlignedItems}>
-        <Link href="../Hjem">
+        <Link href="/">
           <img className={styles.nav_img} src="../FirmaLogo.WebP" alt="M&N Regnskap Logo" />
         </Link>
       </div>
 
       <div className={styles.rightAlignedIitems}>
-    <Link href="/link" legacyBehavior onClick={closeMenu}>
+    <Link href="/" legacyBehavior onClick={closeMenu}>
       <a className={styles.navTekst}>Hjem</a>
     </Link>
     <Link href="/team" legacyBehavior onClick={closeMenu}>
