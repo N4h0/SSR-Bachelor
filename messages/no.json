@@ -117,6 +117,10 @@
             "chat_with_us": "Chat med oss!",
             "we_will_reply": "Vi svarer så fort vi kan.",
             "input_placeholder": "Skriv inn meldingen din."
+          },
+          "Error":{
+            "notFound": "Ser ut som at noen har bokført denne siden på feil konto! Men fortvil ikke, vi hjelper deg med å balansere bøkene igjen. Bruk menyen for å finne veien tilbake:"
+
           }
           
     }
