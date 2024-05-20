@@ -3,15 +3,17 @@ import React, { useEffect, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faPaperPlane, faRobot } from "@fortawesome/free-solid-svg-icons";
 import styles from "../../../styles/Chatbot.module.css";
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 function Chatbot() {
     const t = useTranslations('Chatbot');
+    const locale = useLocale(); 
     const chatBodyRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([]);
     const [showPopup, setShowPopup] = useState(true);
     const [showSuggestions, setShowSuggestions] = useState(true);
+
 
     const sendMessage = (content, type = "user") => {
         if (content.trim()) {
@@ -26,7 +28,7 @@ function Chatbot() {
     useEffect(() => {
         const WELCOME_MESSAGE = {
             type: "bot",
-            content: <p>{t('welcome_message')}</p>,
+            content: t('welcome_message'), // Ensure this is plain text
             time: new Date().toLocaleTimeString("nb-NO", {
                 hour: "2-digit",
                 minute: "2-digit",
@@ -73,23 +75,24 @@ function Chatbot() {
                 </button>
             )}
             {isOpen && (
-                <ChatDialog onSend={sendMessage} onClose={() => setIsOpen(false)} messages={messages} showSuggestions={showSuggestions} setShowSuggestions={setShowSuggestions} />
+                <ChatDialog onSend={sendMessage} onClose={() => setIsOpen(false)} messages={messages} showSuggestions={showSuggestions} setShowSuggestions={setShowSuggestions} locale={locale} />
             )}
         </div>
     );
 }
 
-function ChatDialog({ onSend, onClose, messages, showSuggestions, setShowSuggestions }) {
+function ChatDialog({ onSend, onClose, messages, showSuggestions, setShowSuggestions, locale }) {
+    const t = useTranslations('Chatbot');
     return (
         <div className={styles.chatDialog}>
-            <ChatHeader onClose={onClose} />
-            <ChatBody messages={messages} onSend={onSend} showSuggestions={showSuggestions} setShowSuggestions={setShowSuggestions} />
-            <ChatFooter onSend={onSend} setShowSuggestions={setShowSuggestions} />
+            <ChatHeader onClose={onClose} t={t} />
+            <ChatBody messages={messages} onSend={onSend} showSuggestions={showSuggestions} setShowSuggestions={setShowSuggestions} locale={locale} />
+            <ChatFooter t={t} onSend={onSend} setShowSuggestions={setShowSuggestions} locale={locale} />
         </div>
     );
 }
 
-function ChatHeader({ onClose }) {
+function ChatHeader({ onClose ,t }) {
     return (
         <div className={styles.chatHeader}>
             <img src="/mn-regnskap-logo.webp" alt="Logo" className={styles.chatLogo} />
@@ -104,7 +107,7 @@ function ChatHeader({ onClose }) {
     );
 }
 
-function ChatBody({ messages, onSend, showSuggestions, setShowSuggestions }) {
+function ChatBody({ messages, onSend, showSuggestions, setShowSuggestions, locale }) {
     const chatBodyRef = useRef(null);
     useEffect(() => {
         if (chatBodyRef.current) {
@@ -119,7 +122,7 @@ function ChatBody({ messages, onSend, showSuggestions, setShowSuggestions }) {
         fetch("https://n4h0.pythonanywhere.com/api/chatbot", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ question: suggestionContent }),
+            body: JSON.stringify({ question: suggestionContent, language: locale }),
         })
             .then((response) => response.json())
             .then((data) => {
@@ -165,7 +168,7 @@ function ChatBody({ messages, onSend, showSuggestions, setShowSuggestions }) {
     );
 }
 
-function ChatFooter({ onSend, setShowSuggestions }) {
+function ChatFooter({ onSend, setShowSuggestions, locale, t }) {
     const [message, setMessage] = useState("");
 
     const handleInputChange = (e) => setMessage(e.target.value);
@@ -189,7 +192,7 @@ function ChatFooter({ onSend, setShowSuggestions }) {
             fetch("https://n4h0.pythonanywhere.com/api/chatbot", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ question: message }),
+                body: JSON.stringify({ question: message, language: locale  }),
             })
                 .then((response) => response.json())
                 .then((data) => {
