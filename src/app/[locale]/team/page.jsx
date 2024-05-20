@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from "../../../styles/Team.module.css";
 
 function Team() {
