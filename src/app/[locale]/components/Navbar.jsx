@@ -4,20 +4,26 @@ import { useRouter, usePathname } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import styles from "../../../styles/NavBar.module.css";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
+  
+  const toggleLanguageMenu = () => setIsLanguageMenuOpen(!isLanguageMenuOpen);
+  const closeLanguageMenu = () => setIsLanguageMenuOpen(false);
+
   const router = useRouter();
   const locale = useLocale();
   const pathname = usePathname();
   const t = useTranslations('NavBar');
 
   const toggleLanguage = () => {
-    const newLocale = locale === 'en' ? 'no' : 'en'; // Assuming you have 'en' and 'no' as your locales
+    const newLocale = locale === 'en' ? 'no' : 'en';
     router.push(`/${newLocale}${pathname.substring(3)}`);
   };
 
@@ -45,9 +51,23 @@ const NavBar = () => {
         <Link legacyBehavior href={`/${locale}/contact`}>
           <a className={styles.navTekst} onClick={closeMenu}>{t('contactUs')}</a>
         </Link>
-        <button onClick={toggleLanguage} className={styles.languageButton}>
-          {locale === 'en' ? 'NO' : 'EN'}
-        </button>
+        <div className={styles.dropDown} onMouseEnter={toggleLanguageMenu} onMouseLeave={closeLanguageMenu}>
+          <button className={styles.navTekst}>
+            <img src={locale === 'no' ? "/norge.png" : "/usa.png"} alt={locale === 'no' ? "Norwegian Flag" : "US Flag"} />
+            {locale === 'no' ? 'Norsk' : 'English'}
+            <FontAwesomeIcon icon={isLanguageMenuOpen ? faChevronUp : faChevronDown} />
+          </button>
+          {isLanguageMenuOpen && (
+            <div className={styles.dropDownContent}>
+              <button onClick={() => { toggleLanguage(); closeLanguageMenu(); }}>
+                <img src="/usa.png" alt="US Flag" /> English
+              </button>
+              <button onClick={() => { toggleLanguage(); closeLanguageMenu(); }}>
+                <img src="/norge.png" alt="Norwegian Flag" />Norwegian
+              </button>
+            </div>
+          )}
+        </div>
       </div>
       <button className={styles.icon} onClick={toggleMenu}>
         <FontAwesomeIcon icon={faBars} />
